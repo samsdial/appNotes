@@ -5,6 +5,7 @@ require("dotenv").config();
 
 const estudiantesRoutes = require("./routes/estudiantes");
 const materiaRoutes = require("./routes/materia");
+const authRoutes = require("./routes/auth");
 const app = express();
 // Middleware
 app.use(express.json());
@@ -19,6 +20,7 @@ mongoose
 // rutas
 app.use("/api/estudiantes", estudiantesRoutes);
 app.use("/api/materia", materiaRoutes);
+app.use("/api", authRoutes);
 
 // conexion a la base de datos
 
